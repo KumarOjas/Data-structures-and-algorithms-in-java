@@ -1,0 +1,48 @@
+/*Enumerations was added to Java language in JDK5. Enumeration means a list of named constant. In Java, enumeration defines a class type.
+An Enumeration can have constructors, methods and instance variables. It is created using enum keyword. Each enumeration constant is 
+public, static and final by default. Even though enumeration defines a class type and have constructors, you do not instantiate an enum
+using new. Enumeration variables are used and declared in much a same way as you do a primitive variable.*/
+/*Java.util.Vector Class in Java
+
+The Vector class implements a grow
+able array of objects. Vectors basically falls in legacy classes but now it is fully compatible with collections.
+
+Vector implements a dynamic array that means it can grow or shrink as required. Like an array, it contains components that can be accessed using an
+integer index
+They are very similar to ArrayList but Vector is synchronised and have some legacy method which collection framework does not contain.
+It extends AbstractList and implements List interfaces.
+Constructor:
+
+Vector(): Creates a default vector of initial capacity is 10.
+Vector(int size): Creates a vector whose initial capacity is specified by size.
+Vector(int size, int incr): Creates a vector whose initial capacity is specified by size and increment is specified by incr. It specifies the number
+of elements to allocate each time that a vector is resized upward.
+Vector(Collection c): Creates a vector that contains the elements of collection c.
+
+
+*/
+
+
+
+package enumeration;
+import java.util.Vector;
+import java.util.Enumeration;
+
+public class enumerationtester
+
+{
+public static void main(String args[]){
+Enumeration days;
+Vector dayNames=new Vector();
+dayNames.add("Sunday");
+dayNames.add("Monday");
+dayNames.add("Tuesday");
+dayNames.add("Wednesday");
+dayNames.add("Thurssday");
+dayNames.add("Friday");
+dayNames.add("Saturday");
+days=dayNames.elements();
+while(days.hasMoreElements()){
+System.out.print(days.nextElement());
+}}}
+Output:SundayMondayTuesdayWednesdayThursdayFridaySaturday
