@@ -1,0 +1,185 @@
+/*
+In arrays, one operation can only be applied at a time but it is not the case with vectors
+Java.util.Vector Class in Java.
+The Vector class implements a growable array of objects. Vectors basically falls in legacy classes but now it is fully compatible with 
+collections.
+
+Vector implements a dynamic array that means it can grow or shrink as required. Like an array, it contains components that can be 
+accessed using an integer index
+They are very similar to ArrayList but Vector is synchronised and have some legacy method which collection framework does not contain.
+It extends AbstractList and implements List interfaces.
+Constructor:
+
+Vector(): Creates a default vector of initial capacity is 10.
+Vector(int size): Creates a vector whose initial capacity is specified by size.
+Vector(int size, int incr): Creates a vector whose initial capacity is specified by size and increment is specified by incr. It specifies
+the number of elements to allocate each time that a vector is resized upward.
+Vector(Collection c): Creates a vector that contains the elements of collection c.
+Important points regarding Increment of vector capacity: 
+If increment is specified, Vector will expand according to it in each allocation cycle but if increment is not specified then vector’s 
+capacity get doubled in each allocation cycle. Vector defines three protected data member:
+int capacityIncreament: Contains the increment value.
+int elementCount: Number of elements currently in vector stored in it.
+Object elementData[]: Array that holds the vector is stored in it.*/
+
+package vector;
+import java.util.*;
+public class VectorDemo
+{
+public static void main(String args[])
+{
+Vector v=new Vector(3,2);
+System.out.println("Initial Size"+v.size());
+System.out.println(" Initial Size"+v.capacity());
+v.addElement(new Integer(1)));
+v.addElement(new Integer(2)));
+v.addElement(new Integer(3)));
+v.addElement(new Integer(4)));
+System.out.println(" Capacity after adding four elements"+v.capacity());
+
+v.addElement(new Double(5.45));
+System.out.println(" current Capacity"+v.capacity());
+v.addElement(new Double(6.05));
+v.addElement(new Integer(7)));
+System.out.println(" current Capacity"+v.capacity());
+v.addElement(new Float(9.3)));
+v.addElement(new Integer(10)));
+
+System.out.println(" current Capacity"+v.capacity());
+v.addElement(new Integer(11)));
+v.addElement(new Integer(12)));
+
+System.out.println(" First Element"+(Integer)v.firstElement());
+System.out.println(" last element"+(Integer)v.lastElement());
+if(v.contains(new Integer(3))){
+System.out.println(" vector contains 3");
+Enumeration vEnum=v.elements();
+System.out.println(" \nElement is vector:");
+while(vEnum.hasMoreElements())
+{
+System.out.println(vEnum.nextElement()+"");
+System.out.println();
+}}}
+Output:
+Initial Size:0
+Initial Capacity:3 
+Capacity after four addition5
+Current Capacity 5
+Current Capacity 7
+Current Capacity9
+First Element1
+last Element:12
+vector contains 3.
+Element is vector:
+1
+2
+3
+4
+5.45
+6.05
+7
+9.3
+10
+11
+12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
