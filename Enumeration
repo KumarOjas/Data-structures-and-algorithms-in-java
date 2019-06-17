@@ -46,3 +46,118 @@ while(days.hasMoreElements()){
 System.out.print(days.nextElement());
 }}}
 Output:SundayMondayTuesdayWednesdayThursdayFridaySaturday
+
+//Example 2
+
+
+package enumeration;
+public enum enumerationtester
+{
+highlevel,machinelevel,assembly,middlelevel;
+} 
+
+
+package enumeration;
+public class enum1{
+public static void main(String args[]){
+enumerationtester lang;
+System.out.println("here are list of constants");
+enumerationtester alltypes[]=enumnumerationtester.values();
+for(enumerationtester a:alltypes) {
+System.out.println(a);
+System.out.println();
+lang =enumerationtester.valueOf("assembly");
+System.out.println("values is"+lang);
+}}}
+Output: values isassembly
+middlelevel
+
+values isassembly
+//Example 3
+package enumeration1;
+public enum color{
+RED,GREEN,Blue;
+}
+package enumeration1;
+public class test{
+public static void  main(String[] args){
+color c1=color.RED;
+System.out.println(c1);
+}}
+Output:RED
+//Example 4
+package enuminheritance;
+public enum color 
+{
+RED,GREEN,BLUE,
+}
+package enuminheritance;
+public class test{
+public static void main(String args[]){
+Color arr[]=Color.values();
+for(Color col:arr)
+{
+System.out.println(col+"at Index"+col.ordinal());
+}
+ 
+System.out.println(Color.valueOf("RED"));
+}} 
+Output:REDat Index0
+       GREENat Index1
+       BLUEat Index2
+       RED
+       
+ //Example 5
+ package enumconstructor;
+ public enum Color {
+ RED,GREEN,BLUE;
+ 
+ private Color() {
+ System.out.println("Constructor called for:"+this.toString());
+ }}
+ public void colorInfo(){
+ System.out.println("Universal color");}}
+ package enumconstructor;
+ public class test {
+ public static void main(String args[]){
+ Color c1=Color.RED;
+ System.out.println(c1);
+ c1.colorInfo();
+ }}
+ Output:
+ Constructor called for:RED
+ Constructor called for:GREEN
+ Constructor called for:BLUE
+ RED
+ universal color
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
