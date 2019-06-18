@@ -1,0 +1,174 @@
+package Stack;
+import java.util.*;
+public class Stack {
+static void showpush(Stack st,int a){
+st.push(new Integer(a));
+System.out.println("Push("+a+")");
+System.out.println("Stack:"+st);
+}
+static void showpop(Stack st){
+System.out.println("pop->");
+Integer a=(Integer) st.pop();
+System.out.println(a);
+System.out.println("Stack:"+st);
+}
+public static void main(String args[]){
+Stack st=new Stack();
+System.out.println("Stack"+st);
+showpush(st,42);
+showpush(st,66);
+showpush(st,99);
+showpop(st);
+showpop(st);
+showpop(st);  
+try
+{
+showpop(st);
+}
+catch(EmptyStackException e){
+
+System.out.println("Empty Stack");
+}}}
+Output:
+stack:Stack.Stack@7852e922
+push(42)
+stack:Stack.Stack@7852e922
+push(66)
+stack:Stack.Stack@7852e922
+push(99)
+stack:Stack.Stack@7852e922
+pop-> null
+stack:Stack.Stack@7852e922
+pop-> null
+stack:Stack.Stack@7852e922
+pop-> null
+//Example 2
+//Dynamic stack
+package Stack;
+public class dynamicStack  {
+private int stackSize;
+private int[] stackArr;
+private int top;
+public dynamicstack(int size){
+this.stackSize=size;
+this.stackArr=new int[stackSize];
+this.top=-1;
+}
+public void push(int entry){
+if(this.isStackFull()){
+System.out.println("Stack is full.Increasing the capacity");
+this.increasesStackCapacity();
+}
+System.out.println("Adding"+entry);
+this.stackArr[++top]=entry;
+}
+
+public int pop() throws Exception{
+if(this.isStackEmpty()){
+throw new  Exception("Stack is empty can't remove element");
+}
+int entry=this.stackArr[top--];
+System.out.println("Remove entry"+entry);
+return entry;
+}
+public long peek()
+{
+return stackArr[top];
+}
+private void increasesStackCapacity(){
+int[] newStack=new int [this.stackSize*2];
+for(int i=0;i<stackSize;i++){
+newStack[i]=this.stackArr[i];
+}
+this.stackArr=newStack;
+this.stackSize=this.stackSize*2; 
+}
+public boolean isStackFull(){
+return (top==stackSize-1);
+}
+public static void main(String args[]){
+dynamicstack stack=new dynamicstack(2);
+for(int i=1;i<10;i++){
+stack.push(i);
+}
+for(int i=1;i<4;i++){
+stack.pop();
+}
+catch (Exception e){
+e.printStackTrace();
+}}}}
+Output:
+Adding 1
+Adding 2
+Stack is full.Increasing the capacity
+Adding 3
+Adding 4
+Stack is full.Increasing the capacity
+Adding 5
+Adding 6
+Adding 7
+Adding 8
+Stack is full.Increasing the capacity
+Adding 9
+Remove entry9
+Remove entry8
+Remove entry7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
