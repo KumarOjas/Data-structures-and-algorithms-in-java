@@ -1,0 +1,117 @@
+package Stack;
+public class towerofhenoi {
+private static dynamicstack[] tower;
+public static void towerofhenoi(int n){
+tower=new dynamicstack[4];
+for(int i=0;i<=3;i++)
+{
+tower[i]=new dynamicstack(4);
+}
+for(int d=n;d>0;d--){
+tower[1].push(new Integer(d));
+}
+showTowerStates(n,1,2,3);
+}
+public static void showTowerStates(int n,int x,int y,int z){
+if(n>0)
+{
+try{
+showTowerStates(n-1,x,y,z);
+Integer d=(Integer) tower[x].pop();
+tower[y].push(d);
+System.out.println("Move Disk"+d+"from tower"+x+"to top of tower"+y);
+showTowerStates(n-1,z,y,x);.
+}
+catch (Exception ex){}
+}
+}
+public static void main(String [] args){
+  System.out.println("Running 3 disk Problems");
+  towerofhenoi(3);
+  }
+  
+  Output:
+  Running 3 disk problems
+  Move disk 1 from tower 1 to top of tower 2 
+  Move disk 2 from tower 1 to top of tower 3
+  Move disk 1 from tower 2 to top of tower 3
+  Move disk 2 from tower 1 to top of tower 3
+  Move disk 3 from tower 1 to top of tower 2
+  Move disk 1 from tower 3 to top of tower 1
+  Move disk 2 from tower 3 to top of tower 2
+  Move disk 1 from tower 1 to top of tower 2
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
