@@ -1,0 +1,311 @@
+package queue;
+public class queuearray {
+private int capacity=2;
+int queueArr[];
+int front=0;
+int rear=-1;
+int currentSize=0;
+public queuearray(){
+queueArr=new int[this.capacity];
+ }
+ public void enque(int item){
+ if (isQueueFull()){
+ System.out.println("Queue is full,Increase Capacity");
+ increaseCapacity();
+ }
+ rear++;
+ if (rear>=queueArr.length && currentSize!=rear>=queueArr.length)
+ {
+ rear=0;
+ }
+ queueArr[rear]=item;
+ currentSize++;
+ System.out.println("Adding"+ item);
+ }}
+ public void deque(){
+ if(isQueueEmpty){
+ System.out.println("Underflow ! unable to remove element from queue");
+ }
+ else
+ {
+ front++;
+ if(front>queueArr.length-1){
+ System.out.println("remove"+queueArr[front-1]);
+ front=0;
+ }
+ else {
+ System.out.println("Removed"+queueArr[front-1]);
+ }
+ currentSize--;
+ }}
+ public boolean isQueueFull(){
+ boolean status=false;
+ if(currentSize==queueArr.length){
+ status=true;
+ }
+ return status;
+ }
+ public boolean  isQueueEmpty(){
+ boolean status=false;
+ if(currentSize==0){
+ status=true;
+ }
+ return status;
+ }
+ private void increaseCapacity(){
+ int newCapacity=this.queueArr.length*2;
+ int [] newArr=new int[newCapacity];
+ int tmpFront=front;
+ int index=-1;
+ while(true){
+ newArr[++index]=this.queueArr[tmpFront];
+ tmpFront++;
+ if(tmpFront==this.queueArr.length){
+ tmpFront=0;
+ }
+ if(currentSize==index+1){
+ break;
+ }}
+ this.queueArr=newArr;
+ System.out.println("new array capacity"+this.queueArr.length);
+ this.front=0;
+ this.rear=index;
+ }
+ public static void main(String args[]){
+ queuearray que=new queuearray();
+ que.enqueue(4);
+ que.dequeue();
+  que.enqueue(56);
+   que.enqueue(2);
+    que.enqueue(60);
+    que.dequeue();
+    que.enqueue(24);
+     que.enqueue(98);
+      que.dequeue();
+       que.dequeue();
+        que.dequeue();
+       que.enqueue(300);
+        que.dequeue();
+         que.dequeue();
+         }}
+         
+Output:
+Adding 4
+Removed4
+Adding 56
+Adding 2
+Queue is full,Increase Capacity
+new array capacity 4
+Adding 60
+Removed56
+Adding 24
+Adding 98
+Removed2
+Removed60
+remove 24
+Adding 300
+Removed98
+Removed300
+
+
+//Program to demonstrate insertion and deletion in queue
+ 
+package queue;
+import java.util.ArrayList;
+import java.util.List;
+public class deque {
+private List<Integer> deque=new ArrayList<Integer>(); 
+public void insertFront(int item){
+System.out.println("adding at front:"+item);
+deque.add(0,item);
+System.out.print(deque);
+}
+public void removeFront(){
+if(deque.isEmpty())
+{ 
+System.out.println("Deque underflor!! unable to remove");
+return;
+}
+int rem=deque.remove(0);
+System.out.println("remove from front"+rem);
+System.out.println(deque);
+}
+int rem=deque.remove(0);
+System.out.println("remove from front"+rem);
+System.out.println(deque);
+}
+public void removeRear() {
+if(deque.isEmpty()){
+System.out.println("Deque underflor unable to remove");
+return;
+}
+int rem=deque.remove(deque.size()-1);
+System.out.println("removed from front"+rem);
+System.out.println(deque);
+}
+public int peakFront() {
+int item=deque.get(0);
+System.out.println("Element at first"+item);
+return item;
+}
+public int peakRear(){
+int item=deque.get(deque.size()-1);
+System.out.println("Element at rear"+item);
+return item;
+}
+public static void main(String args[])
+{
+deque deq=new deque();
+deq.insertFront(34);
+deq.insertFront(50);
+deq.removeFront();
+deq.removeFront();
+deq.removeFront();
+deq.insertFront(21);
+deq.insertFront(98); 
+deq.insertFront(50);
+deq.insertFront(43);
+deq.removeFront();
+
+
+}
+Output:
+adding at front:34
+[34] adding at front:50
+[50,34] remove from front50
+[34]
+remove from front34
+[]
+
+Deque underflor !! unable to remove
+adding at front:21
+[21]adding at front:98
+[98,21]adding at front:50
+[50,98,21]adding at front:43
+[43,50,98,21]remove from front43
+[50,98,21]
+
+
+
+
+
+
+
+
+
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
