@@ -1,0 +1,60 @@
+Java.util.Properties class in Java
+The Properties class represents a persistent set of properties. The Properties can be saved to a stream or loaded from a stream.
+
+Properties is a subclass of Hashtable.
+It is used to maintain list of value in which the key is a string and the value is also a string.
+One useful capability of the Properties class is that you can specify a default property that will be returned if no value is associated
+with a certain key.
+Multiple thread can share a single properties object without the need of external synchronisation.
+Properties defines a instance variable
+Properties defaults: This variable holds a default property list associated with a Properties object.
+Constructors:
+
+Properties(): This creates a Properties object that has no default values.
+Properties(Properties propDefault): The second creates an object that uses propDefault for its default value.
+
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+public class prop{
+public static void main(String[] args){
+Properties prop=new Properties();
+try {
+prop.load(new FileInputStream("myConfig.properties"));
+prop.list(System.out);
+System.out.println(prop.getProperty("File Name"));
+System.out.println(prop.getProperty("Author Name"));
+System.out.println(prop.getProperty("Topic"));
+}
+catch (IOException ex){
+ex.printStackTrace();
+}}}
+
+
+
+Output:Error because myConfig.properties named file has to exist.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
