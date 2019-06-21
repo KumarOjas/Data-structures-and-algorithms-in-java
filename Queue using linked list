@@ -1,0 +1,85 @@
+interface Queue<D>
+	{
+	  public D dequeue();
+	  public void enqueue(D o);
+	  public Integer size();
+	}
+
+package Ojas;
+
+class Listobject<D>
+{
+ D val;
+ Listobjectq<D> next;
+ Listobjectq(D v)
+ {
+  val=v;
+  next=null;
+ }
+}
+class BoundsException extends Exception
+
+{
+void printerror()
+
+{
+printStackTrace();
+
+System.err.println("out of bounds");
+
+}}
+
+
+
+
+	class QueueLl<D> implements Queue<D>
+	{
+	  Listobjectq<D> t;Listobjectq<D> head,tail;
+	  Integer size=3,buffer=0;D val=null;
+	  QueueLl()
+	  {
+	   Listobjectq<D> t=new Listobjectq<D>(val);
+	   head=tail;
+	  }
+	  public D dequeue()
+	  {
+	   D ans;
+	   ans=head.val;
+	   head=head.next;
+	   buffer--;
+	   return ans;
+	  }
+	  public void enqueue(D o)
+	  {
+	   Listobjectq<D> ne=new Listobjectq<D>(o);
+	   if(buffer==0)
+	   {
+	    head=ne;
+	    tail=head.next;
+	    buffer++;
+	   }
+	   ne=tail;
+	   buffer++;
+	  }
+	  public Integer size()
+	  {
+	    return buffer-1;
+	  }
+	 
+	} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
