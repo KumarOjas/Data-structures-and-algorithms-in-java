@@ -1,0 +1,123 @@
+class BoundsException extends Exception
+{
+	void printError()
+	{
+		printStackTrace();
+		System.err.println("Error Occurrred !!");
+	}
+}
+interface List
+{
+	public void add(Integer i);
+	public void traverse();
+	public void add(Integer p,Integer pos);
+}
+class ArrayList implements List
+{
+	Integer arr[];
+	Integer size;
+  Integer buffer;
+  ArrayList()
+                
+	{
+	  buffer=5;//size of array//
+		size=0;//count of no. of elements//
+		arr=new Integer[buffer];
+	}
+  public void add (Integer i)
+	{
+		arr[size]=i;
+    size++;
+		if (size==buffer)
+		{
+			      Integer arr2[]=new Integer [buffer*2];
+            buffer= buffer*2;                      
+        		for(Integer y=0;y<size;y++)
+	        	{ 
+				    arr2[y]=arr[y];
+		        }
+		        arr=arr2;
+		}
+	}
+	public void traverse()
+	{
+		for(Integer i=0;i<size;i++)
+  	     	{ 	
+			System.out.println(arr[i]);
+ 		}
+    	}
+	public void remove(Integer index)
+	{
+		for(Integer i=index+1;i<size;i++)
+		{
+			arr[i-1]=arr[i];
+		}
+		size=size-1;
+		arr[size]=null;
+	}
+	public Integer Binarysearch(Integer a)
+	{
+		Integer low=0,mid;
+		Integer high=size;
+		while(low<=high)
+			{
+				mid=(low+high)/2;
+				if(arr[mid]<a)
+				{
+					low=mid+1;
+				}
+				else if(arr[mid]>a)
+				{
+					high=mid-1;
+				}
+				else
+				{
+					return mid;
+				}
+	}
+	public void add(Integer p,Integer pos)
+	{
+		try
+		{ 
+			if (pos==-1)
+		     	{ 
+				throw new BoundsException();
+		      	}
+		}
+		catch(BoundsException b)
+		{  
+			b.printError();
+			return;
+		}
+		for(Integer i=size;i>=pos;i--)
+		{ 
+			arr[i]=arr[i-1];
+	      	}
+	      	arr[pos-1]=p;
+	      	size++;
+	      	if(size==buffer)
+	      	{ 
+			Object arr2[]=new Object[buffer*2];
+			buffer*=2;
+			for(Integer j=0;j<size;j++)
+			{ 
+				arr2[j]=arr[j];
+			}
+			arr=arr2;
+		}
+	}
+	public static void main(String[] args)
+	{
+		ArrayList ob=new ArrayList();
+		for(Integer x=0;x<30;x++)
+		{
+			ob.add(x);
+		}
+		ob.add(0,-1);
+		ob.traverse();
+		ob.remove(5);
+		ob.traverse();
+		System.out.println(ob.arr);	
+	}
+
+}
